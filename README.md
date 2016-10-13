@@ -13,9 +13,9 @@ That's it! As simple as it can get.
 
 ## How to use it
 **Important:** Because of old browsers (e.g. IE6, IE7), we recommend:
-<br>  — Implement this plugin before any other javascripts (plugins or your own scripts); 
+<br>  — Implement this plugin before any other javascripts (plugins or your own scripts);
 <br> — Although we tested the AJAX approach, and it's easier to implement, we recommend to use the plugin without AJAX calls (5.).
-<br>With these points in consideration is less prone to have conflicts with your code. These browsers have "strange" js errors and the plugin may not be working as intended. So keep it simple! 
+<br>With these points in consideration is less prone to have conflicts with your code. These browsers have "strange" js errors and the plugin may not be working as intended. So keep it simple!
 
 1. Include the CSS located in the HTML head:
 
@@ -60,7 +60,9 @@ That's it! As simple as it can get.
             bgColor: '#f25648',
             color: '#ffffff',
             lowerThan: 'transform',
-            languagePath: 'your_path/outdatedbrowser/lang/en.html'
+            languagePath: 'your_path/outdatedbrowser/lang/en.html',
+            force:true,
+            target:'_blank'
         })
     });
     ```
@@ -72,7 +74,9 @@ That's it! As simple as it can get.
             bgColor: '#f25648',
             color: '#ffffff',
             lowerThan: 'transform',
-            languagePath: 'your_path/outdatedbrowser/lang/en.html'
+            languagePath: 'your_path/outdatedbrowser/lang/en.html',
+            force:true,
+            target:'_blank'
         })
     })
     ```
@@ -95,7 +99,9 @@ That's it! As simple as it can get.
             bgColor: '#f25648',
             color: '#ffffff',
             lowerThan: 'transform',
-            languagePath: ''
+            languagePath: '',
+            force:true,
+            target:'_blank'
         })
     ```
 
@@ -111,7 +117,7 @@ That's it! As simple as it can get.
     * "IE10", "transform" (Default property)
     * "IE9", "boxShadow"
     * "IE8", "borderSpacing"
-    
+
 
 7. Choose the language:
 
