@@ -15,7 +15,8 @@ var outdatedBrowser = function(options) {
         bgColor: '#f25648',
         color: '#ffffff',
         lowerThan: 'transform',
-        languagePath: '../outdatedbrowser/lang/en.html'
+        languagePath: '../outdatedbrowser/lang/en.html',
+        force: false
     }
 
     if (options) {
@@ -34,16 +35,19 @@ var outdatedBrowser = function(options) {
         this.defaultOpts.color = options.color;
         this.defaultOpts.lowerThan = options.lowerThan;
         this.defaultOpts.languagePath = options.languagePath;
+        this.defaultOpts.force = options.force;
 
         bkgColor = this.defaultOpts.bgColor;
         txtColor = this.defaultOpts.color;
         cssProp = this.defaultOpts.lowerThan;
         languagePath = this.defaultOpts.languagePath;
+        force = this.defaultOpts.force;
     } else {
         bkgColor = this.defaultOpts.bgColor;
         txtColor = this.defaultOpts.color;
         cssProp = this.defaultOpts.lowerThan;
         languagePath = this.defaultOpts.languagePath;
+        force = this.defaultOpts.force;
     } //end if options
 
 
@@ -100,7 +104,7 @@ var outdatedBrowser = function(options) {
     } )();
 
     //if browser does not supports css3 property (transform=default), if does > exit all this
-    if (!supports('' + cssProp + '')) {
+    if (force || !supports('' + cssProp + '')) {
         if (done && outdated.style.opacity !== '1') {
             done = false;
             for (var i = 1; i <= 100; i++) {
