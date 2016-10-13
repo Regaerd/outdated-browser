@@ -16,7 +16,8 @@ var outdatedBrowser = function(options) {
         color: '#ffffff',
         lowerThan: 'transform',
         languagePath: '../outdatedbrowser/lang/en.html',
-        force: false
+        force: false,
+        target: false,
     }
 
     if (options) {
@@ -36,18 +37,21 @@ var outdatedBrowser = function(options) {
         this.defaultOpts.lowerThan = options.lowerThan;
         this.defaultOpts.languagePath = options.languagePath;
         this.defaultOpts.force = options.force;
+        this.defaultOpts.target = options.target;
 
         bkgColor = this.defaultOpts.bgColor;
         txtColor = this.defaultOpts.color;
         cssProp = this.defaultOpts.lowerThan;
         languagePath = this.defaultOpts.languagePath;
         force = this.defaultOpts.force;
+        target = this.defaultOpts.target;
     } else {
         bkgColor = this.defaultOpts.bgColor;
         txtColor = this.defaultOpts.color;
         cssProp = this.defaultOpts.lowerThan;
         languagePath = this.defaultOpts.languagePath;
         force = this.defaultOpts.force;
+        target = this.defaultOpts.target
     } //end if options
 
 
@@ -209,6 +213,9 @@ var outdatedBrowser = function(options) {
             } else {
                 insertContentHere.innerHTML = ajaxEnglishDefault;
             }
+
+            if (target) document.getElementById('btnUpdateBrowser').setAttribute('target', target);
+
             startStylesAndEvents();
         }
         return false;
